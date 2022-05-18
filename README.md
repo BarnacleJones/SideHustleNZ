@@ -6,4 +6,8 @@ This is for a ficticious company SideHustleNZ that connects people looking for j
 
 Built out of inspiration for a lack in the NZ scene for finding a steady side hustle!
 
+Alongside this application is a lot of documentation, including:
+
+mood boards, business proposal, user profiles, scenarios of use documentation, use case diagram, icon library, design mockups, hieratical diagrams, annotated diagrams.
+
 
