@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="SideHustleNZ.EmployerSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SideHustleNZ"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width=".5*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width=".5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/sand.jpg"/>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="35" 
+               Margin="10,10,0,0" VerticalAlignment="Top" Width="38"                
+               Source="/Assets/home.png" Canvas.ZIndex="3" 
+               Visibility="Visible" Tapped="Image_Tapped" />
+        <Button Content="Home"
+                Grid.Column="1" Grid.ColumnSpan="3"
+                Grid.Row="0" HorizontalAlignment="Center" 
+                VerticalAlignment="Center" Height="80" Width="200"
+                Tapped="Button_Tapped" Background="White" Foreground="#FF2E4739" FontFamily="Yu Gothic" FontSize="16" Opacity="0.8"/>
+        <TextBlock Text="Email Alerts" FontSize="16"
+                   Grid.Column="1" Grid.Row="1" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Yu Gothic" Foreground="White" FontWeight="Bold"/>
+        <TextBlock Text="View Rating" FontSize="16"
+                   Grid.Column="1" Grid.Row="3" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Yu Gothic" Foreground="White" FontWeight="Bold"/>
+        <TextBlock Text="Credit Card Details" FontSize="16"
+                   Grid.Column="1" Grid.Row="5" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Yu Gothic" Foreground="White" FontWeight="Bold"/>
+        <ToggleSwitch 
+            Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" 
+            VerticalAlignment="Center" Margin="30" FontFamily="Yu Gothic" FontSize="16" Foreground="White" FontWeight="Bold"
+            />
+        <Button
+            Grid.Row="3" Grid.Column="3" Content="View" HorizontalAlignment="Center"
+            Width="150" Height="40" Background="White" Foreground="#FF2E4739" FontFamily="Yu Gothic" FontSize="16" Opacity="0.8"/>
+        <Button
+            Grid.Row="5" Grid.Column="3" Content="View/Alter/Delete" HorizontalAlignment="Center"
+            Width="150" Height="40" Background="White" Foreground="#FF2E4739" FontFamily="Yu Gothic" FontSize="15" Opacity="0.8"/>
+
+        <Rectangle  Height="900" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" Stroke="Black" VerticalAlignment="Top" Fill="#FFBFB5B5" Opacity=".6" Canvas.ZIndex="-2" />
+
+        <Rectangle  Height="900" Grid.Column="3" Grid.Row="1" Grid.RowSpan="5" Stroke="Black" VerticalAlignment="Top" Fill="#FFBFB5B5" Opacity=".6" Canvas.ZIndex="-2" />
+
+    </Grid>
+</Page>

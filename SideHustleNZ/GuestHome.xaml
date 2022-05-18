@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="SideHustleNZ.GuestHome"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SideHustleNZ"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/PiggyBank.jpg"/>
+        </Grid.Background>
+        <Button Content="Home" x:Name="HomeButton" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Tapped="HomeButton_Tapped"/>
+        <!--This page will only have job listings, no avaiable navigation-->
+    </Grid>
+</Page>

@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="SideHustleNZ.ViewApplications"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SideHustleNZ"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/sand.jpg"/>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="35" 
+               Margin="10,10,0,0" VerticalAlignment="Top" Width="38"                
+               Source="/Assets/home.png"  
+               Visibility="Visible" Tapped="Image_Tapped" />
+        <Button Content="Back to Employer Home"  Grid.Column="1" HorizontalAlignment="Center" Tapped="Button_Tapped" Foreground="#FF2E4739" Background="#FFFFFF" Height="50" Width="188" Opacity="0.745"/>
+        <Button Content="Full Applicant CV" Grid.Row="5" Grid.Column="1" Background="#FFFFFF" HorizontalAlignment="Center" 
+                Tapped="Button_Tapped_1" Foreground="#FF2E4739" Height="50" Width="187" Opacity="0.8" />
+        <ListBox x:Name="applicantListBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" FontFamily="Yu Gothic" FontSize="16" Foreground="#FF2E4739" Opacity="0.6" SelectionChanged="applicantListBox_SelectionChanged" />
+
+
+        <Button Content="Accept"
+                Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2"
+                Background="Green" FontFamily="Yu Gothic" FontSize="18"  Opacity="0.7"
+                />
+        <Button Content="Deny"
+                Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"
+                Background="Red" FontFamily="Yu Gothic" FontSize="18" Width="87"  Opacity="0.7" Margin="5"
+                />
+        <Image x:Name="ImagePerson"             
+            VerticalAlignment="Stretch" HorizontalAlignment="Left"
+            Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Opacity="0.7"
+            />
+        <TextBlock x:Name="TextBlockName"  Text=""
+                   Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3"
+                   HorizontalAlignment="Right"  Padding="15" FontStretch="UltraExpanded"
+                   FontSize="50%" FontFamily="Yu Gothic" TextWrapping="WrapWholeWords"
+                    />
+
+        <TextBlock x:Name="TextBlockDescription"  Text=""
+                   Grid.Column="0" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3"
+                   HorizontalAlignment="Left"  TextWrapping="WrapWholeWords" FontStretch="UltraExpanded"
+                   FontSize="20px" FontFamily="Yu Gothic"
+                    />
+
+
+
+        <Rectangle   Grid.Column="0" Grid.Row="2" Height="483"  Grid.ColumnSpan="3" Stroke="Black" Grid.RowSpan="3"  VerticalAlignment="Top" Fill="#FFBFB5B5" Opacity=".6" Canvas.ZIndex="-2" />
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="SideHustleNZ.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SideHustleNZ"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/bricks.jpg"/>
+        </Grid.Background>
+        <Image HorizontalAlignment="Left" Height="35" 
+               VerticalAlignment="Top" Width="38"                
+               Source="/Assets/home.jpg" Canvas.ZIndex="3" 
+               Visibility="Visible" Tapped="Image_Tapped" />
+        <Image 
+            Source="/Assets/logo.jpg"
+                   Width="324"
+            
+                  Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Center"
+                  Grid.ColumnSpan="4" VerticalAlignment="Center" Opacity="0.75"
+                 />
+        <Button x:Name="GoToEmployeeHome"
+                Content="Employee"
+                Height="127" Width="324" 
+                Tapped="GoToEmployeeHome_Tapped" HorizontalAlignment="Center"
+                Grid.Row="1" FontFamily="Yu Gothic" Background="White" Foreground="#FF2E4739" FontSize="18" Grid.ColumnSpan="4"  Grid.RowSpan="1" VerticalAlignment="Center" Opacity="0.75"
+                />
+        <Button x:Name="GoToEmployerHome" 
+                Content="Employer"
+                Height="127" Width="324" 
+                Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center"
+                Tapped="GoToEmployerHome_Tapped" FontFamily="Yu Gothic" Background="White" Foreground="#FF2E4739" FontSize="18" Grid.ColumnSpan="4" Grid.RowSpan="1" VerticalAlignment="Center" Opacity="0.75"
+                
+                />
+        <Button x:Name="GuestButton" 
+                Content="Guest (Look at jobs)" Width="324" HorizontalAlignment="Center" Height="128"  Grid.ColumnSpan="4" Grid.Row="3"
+                Tapped="GuestButton_Tapped_1" FontFamily="Yu Gothic" Background="White" Foreground="#FF2E4739" FontSize="18"  VerticalAlignment="Center" Opacity="0.75" />
+        <Rectangle Grid.ColumnSpan="4"  Height="566"  Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="366" Grid.RowSpan="3" Fill="#FFF5EBEB" Canvas.ZIndex="-3" Opacity="0.4" HorizontalAlignment="Center"/>
+    </Grid>
+</Page>
