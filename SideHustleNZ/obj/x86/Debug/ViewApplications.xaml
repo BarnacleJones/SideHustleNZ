@@ -32,7 +32,7 @@
         <Button x:ConnectionId='3' Content="Back to Employer Home"  Grid.Column="1" HorizontalAlignment="Center"                        Foreground="#FF2E4739" Background="#FFFFFF" Height="50" Width="188" Opacity="0.745"/>
         <Button x:ConnectionId='4' Content="Full Applicant CV" Grid.Row="5" Grid.Column="1" Background="#FFFFFF" HorizontalAlignment="Center" 
                                          Foreground="#FF2E4739" Height="50" Width="187" Opacity="0.8" />
-        <ListBox x:ConnectionId='5' x:Name="applicantListBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" FontFamily="Yu Gothic" FontSize="16" Foreground="#FF2E4739" Opacity="0.6"                                                      />
+        <ListBox x:ConnectionId='5' x:Name="applicantListBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" FontFamily="Yu Gothic" FontSize="16" Foreground="#FF2E4739" Opacity="0.6"                                                                                                   />
 
 
         <Button Content="Accept"
@@ -50,19 +50,20 @@
         <TextBlock x:ConnectionId='7' x:Name="TextBlockName"  Text=""
                    Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3"
                    HorizontalAlignment="Right"  Padding="15" FontStretch="UltraExpanded"
-                   FontSize="50%" FontFamily="Yu Gothic" TextWrapping="WrapWholeWords"
+                   FontSize="50%" FontFamily="Yu Gothic" TextWrapping="WrapWholeWords"                                          
                     />
 
         <TextBlock x:ConnectionId='8' x:Name="TextBlockDescription"  Text=""
                    Grid.Column="0" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3"
                    HorizontalAlignment="Left"  TextWrapping="WrapWholeWords" FontStretch="UltraExpanded"
-                   FontSize="20px" FontFamily="Yu Gothic"
+                   FontSize="20px" FontFamily="Yu Gothic"                                                 
                     />
 
 
 
         <Rectangle   Grid.Column="0" Grid.Row="2" Height="483"  Grid.ColumnSpan="3" Stroke="Black" Grid.RowSpan="3"  VerticalAlignment="Top" Fill="#FFBFB5B5" Opacity=".6" Canvas.ZIndex="-2" />
 
+        <MediaElement x:ConnectionId='9' x:Name="media" />
 
     </Grid>
 </Page>

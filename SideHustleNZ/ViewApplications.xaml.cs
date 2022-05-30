@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using Windows.Media.SpeechSynthesis;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,6 +25,36 @@ namespace SideHustleNZ
     /// </summary>
     public sealed partial class ViewApplications : Page
     {
+        //Talk function to read text of element that is double tapped
+        private async void Talk(string message)
+        {
+            try
+            {
+                // Configure the audio output.
+                var reader = new SpeechSynthesizer();
+                // Get the text
+                var stream = await reader.SynthesizeTextToStreamAsync(message);
+                // Setup the stream for the player
+                media.SetSource(stream, stream.ContentType);
+                // Play the message
+                media.Play();
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                // Voice Package not installed
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Media player components unavailable.\nYou need to Install a Voice Package in your Windows Settings.\n\nSettings > Time & Language > Speech > Manage Voices > Add Voices");
+                await messageDialog.ShowAsync();
+            }
+            catch (Exception)
+            {
+                // If the text is unable to be synthesized, throw an error message to the user.
+                media.AutoPlay = false;
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Unable to synthesize text");
+                await messageDialog.ShowAsync();
+            }
+        }
+
+        //Applicant dictionary
         Dictionary<string, Applicants> applicantDictionary = new Dictionary<string, Applicants>()
         {
             {"John Doe", new Applicants() { Name="John Doe", Skills="Certified Electrician\nCertified Instrumentation\nI have many years electrical experience and can do any household electrical work", Image="profilephoto.png"}},
@@ -33,6 +64,7 @@ namespace SideHustleNZ
         public ViewApplications()
         {
             this.InitializeComponent();
+            //populate listbox with dictionary items
             applicantListBox.ItemsSource = applicantDictionary.Keys;
             // setup the device sizing for the application
             ApplicationView.GetForCurrentView().TryResizeView(new Size(App.DeviceScreenWidth, App.DeviceScreenHeight));
@@ -87,6 +119,21 @@ namespace SideHustleNZ
 
             }
 
+        }
+
+        private void applicantListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            Talk(applicantListBox.SelectedItem.ToString());
+        }
+
+        private void TextBlockName_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            Talk(TextBlockName.Text);
+        }
+
+        private void TextBlockDescription_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            Talk(TextBlockDescription.Text);
         }
     }
 }

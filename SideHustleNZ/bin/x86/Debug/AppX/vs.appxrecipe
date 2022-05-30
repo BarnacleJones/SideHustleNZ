@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-05-18T21:49:38.592</Modified>
+      <Modified>2022-05-30T03:30:07.273</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\SideHustleNZ.exe">
       <PackagePath>entrypoint\SideHustleNZ.exe</PackagePath>
-      <Modified>2022-05-18T21:49:37.961</Modified>
+      <Modified>2022-05-30T03:30:06.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.12\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -130,51 +130,51 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\SideHustleNZ.xr.xml">
       <PackagePath>SideHustleNZ.xr.xml</PackagePath>
-      <Modified>2022-05-18T21:45:43.614</Modified>
+      <Modified>2022-05-30T02:58:50.977</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-05-18T21:49:37.843</Modified>
+      <Modified>2022-05-30T03:30:06.062</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\ApplicantPage.xbf">
       <PackagePath>ApplicantPage.xbf</PackagePath>
-      <Modified>2022-05-18T21:49:37.844</Modified>
+      <Modified>2022-05-30T03:30:06.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\EmployeeHome.xbf">
       <PackagePath>EmployeeHome.xbf</PackagePath>
-      <Modified>2022-05-18T21:49:37.844</Modified>
+      <Modified>2022-05-30T03:30:06.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\EmployeeSettings.xbf">
       <PackagePath>EmployeeSettings.xbf</PackagePath>
-      <Modified>2022-05-18T21:49:37.844</Modified>
+      <Modified>2022-05-30T03:30:06.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\EmployerHome.xbf">
       <PackagePath>EmployerHome.xbf</PackagePath>
-      <Modified>2022-05-18T21:49:37.844</Modified>
+      <Modified>2022-05-30T03:30:06.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\EmployerSettings.xbf">
       <PackagePath>EmployerSettings.xbf</PackagePath>
-      <Modified>2022-05-18T21:49:37.844</Modified>
+      <Modified>2022-05-30T03:30:06.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\GuestPage.xbf">
       <PackagePath>GuestPage.xbf</PackagePath>
-      <Modified>2022-05-18T21:49:37.844</Modified>
+      <Modified>2022-05-30T03:30:06.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\ListJob.xbf">
       <PackagePath>ListJob.xbf</PackagePath>
-      <Modified>2022-05-18T21:49:37.845</Modified>
+      <Modified>2022-05-30T03:30:06.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\LookAtJobs.xbf">
       <PackagePath>LookAtJobs.xbf</PackagePath>
-      <Modified>2022-05-18T21:49:37.845</Modified>
+      <Modified>2022-05-30T03:30:06.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-05-18T21:49:37.845</Modified>
+      <Modified>2022-05-30T03:30:06.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\ViewApplications.xbf">
       <PackagePath>ViewApplications.xbf</PackagePath>
-      <Modified>2022-05-18T21:49:37.845</Modified>
+      <Modified>2022-05-30T03:30:06.065</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -186,7 +186,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ben\source\repos\SideHustleNZ\SideHustleNZ\bin\x86\Debug\Core\SideHustleNZ.exe">
       <PackagePath>SideHustleNZ.exe</PackagePath>
-      <Modified>2022-05-18T21:49:38.587</Modified>
+      <Modified>2022-05-30T03:30:07.256</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

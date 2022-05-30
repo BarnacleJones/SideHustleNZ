@@ -76,6 +76,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Padding" />
+      <RootEvent Name="DoubleTapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="Height" />
@@ -120,7 +121,9 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="FontSize" />
       <RootEvent Name="SelectionChanged" />
+      <RootEvent Name="DoubleTapped" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.MediaElement" />
     <RootType FullName="SideHustleNZ.GuestPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="PlaceholderText" />

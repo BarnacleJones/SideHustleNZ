@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
+using Windows.Media.SpeechSynthesis;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace SideHustleNZ
@@ -23,6 +23,35 @@ namespace SideHustleNZ
     /// </summary>
     public sealed partial class LookAtJobs : Page
     {
+        //Talk function to read text of element that is double tapped
+        private async void Talk(string message)
+        {
+            try
+            {
+                // Configure the audio output.
+                var reader = new SpeechSynthesizer();
+                // Get the text
+                var stream = await reader.SynthesizeTextToStreamAsync(message);
+                // Setup the stream for the player
+                media.SetSource(stream, stream.ContentType);
+                // Play the message
+                media.Play();
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                // Voice Package not installed
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Media player components unavailable.\nYou need to Install a Voice Package in your Windows Settings.\n\nSettings > Time & Language > Speech > Manage Voices > Add Voices");
+                await messageDialog.ShowAsync();
+            }
+            catch (Exception)
+            {
+                // If the text is unable to be synthesized, throw an error message to the user.
+                media.AutoPlay = false;
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Unable to synthesize text");
+                await messageDialog.ShowAsync();
+            }
+        }
+
         Dictionary<string, Jobs> JobsDictionary = new Dictionary<string, Jobs>()
         {
             {"Gardening", new Jobs() { Name="Gardening - One Off", Description="One off gardening work. Involves weeding, laying paving stones and enjoying the sun."}},
@@ -39,29 +68,18 @@ namespace SideHustleNZ
 
             JobsListBox.ItemsSource = JobsDictionary.Keys;
 
-
             // setup the device sizing for the application
             ApplicationView.GetForCurrentView().TryResizeView(new Size(App.DeviceScreenWidth, App.DeviceScreenHeight));
             ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(App.DeviceMinimumScreenWidth, App.DeviceMinimumScreenHeight));
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
 
-        /*private void Button_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
-        }*/
-
-        /*private void Button_Tapped_1(object sender, TappedRoutedEventArgs e)
-        {
-            //Navigate to home
-            this.Frame.Navigate(typeof(EmployeeHome));
-        }*/
+       
 
         private async void GoToApplyJob_Tapped(object sender, TappedRoutedEventArgs e)
         {
             // Create the message dialog and set its content
             var messageDialog = new Windows.UI.Popups.MessageDialog("This is where you will apply to job (few details, push submit).");
-
 
             // Show the message dialog
             await messageDialog.ShowAsync();
@@ -72,28 +90,16 @@ namespace SideHustleNZ
             // Create the message dialog and set its content
             var messageDialog = new Windows.UI.Popups.MessageDialog("This is where you will accept your job (few details, push submit).");
 
-
             // Show the message dialog
             await messageDialog.ShowAsync();
-
         }
 
         private void Button_Tapped_3(object sender, TappedRoutedEventArgs e)
         {
-
             //Navigate to home
             this.Frame.Navigate(typeof(EmployeeHome));
         }
-        //can I delete these two below without breaking? (program lagged and these were all added)
-        /*private void Button_Tapped_2(object sender, TappedRoutedEventArgs e)
-        {
 
-        }
-
-        private void Button_Tapped_3(object sender, TappedRoutedEventArgs e)
-        {
-
-        }*/
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
@@ -122,9 +128,23 @@ namespace SideHustleNZ
                 TextBlockName.Text = theJob.Name.ToString();
 
                 TextBlockDescription.Text = theJob.Description.ToString();
-
             }
+        }
+        
+              
+        private void TextBlockDescription_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            Talk(TextBlockDescription.Text);
+        }
 
+        private void TextBlockName_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            Talk(TextBlockName.Text);
+        }
+
+        private void JobsListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            Talk(JobsListBox.SelectedItem.ToString());
         }
     }
 }

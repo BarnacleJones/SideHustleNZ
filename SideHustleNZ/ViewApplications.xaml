@@ -32,7 +32,7 @@
         <Button Content="Back to Employer Home"  Grid.Column="1" HorizontalAlignment="Center" Tapped="Button_Tapped" Foreground="#FF2E4739" Background="#FFFFFF" Height="50" Width="188" Opacity="0.745"/>
         <Button Content="Full Applicant CV" Grid.Row="5" Grid.Column="1" Background="#FFFFFF" HorizontalAlignment="Center" 
                 Tapped="Button_Tapped_1" Foreground="#FF2E4739" Height="50" Width="187" Opacity="0.8" />
-        <ListBox x:Name="applicantListBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" FontFamily="Yu Gothic" FontSize="16" Foreground="#FF2E4739" Opacity="0.6" SelectionChanged="applicantListBox_SelectionChanged" />
+        <ListBox x:Name="applicantListBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" FontFamily="Yu Gothic" FontSize="16" Foreground="#FF2E4739" Opacity="0.6" SelectionChanged="applicantListBox_SelectionChanged" DoubleTapped="applicantListBox_DoubleTapped" />
 
 
         <Button Content="Accept"
@@ -50,19 +50,20 @@
         <TextBlock x:Name="TextBlockName"  Text=""
                    Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3"
                    HorizontalAlignment="Right"  Padding="15" FontStretch="UltraExpanded"
-                   FontSize="50%" FontFamily="Yu Gothic" TextWrapping="WrapWholeWords"
+                   FontSize="50%" FontFamily="Yu Gothic" TextWrapping="WrapWholeWords" DoubleTapped="TextBlockName_DoubleTapped"
                     />
 
         <TextBlock x:Name="TextBlockDescription"  Text=""
                    Grid.Column="0" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3"
                    HorizontalAlignment="Left"  TextWrapping="WrapWholeWords" FontStretch="UltraExpanded"
-                   FontSize="20px" FontFamily="Yu Gothic"
+                   FontSize="20px" FontFamily="Yu Gothic" DoubleTapped="TextBlockDescription_DoubleTapped"
                     />
 
 
 
         <Rectangle   Grid.Column="0" Grid.Row="2" Height="483"  Grid.ColumnSpan="3" Stroke="Black" Grid.RowSpan="3"  VerticalAlignment="Top" Fill="#FFBFB5B5" Opacity=".6" Canvas.ZIndex="-2" />
 
+        <MediaElement x:Name="media" />
 
     </Grid>
 </Page>

@@ -47,23 +47,23 @@
             TextWrapping="WrapWholeWords"
             Grid.Row="2"
             Text=""     
-           FontSize="30" TextAlignment="Center" FontFamily="Yu Gothic" HorizontalAlignment="Center" Foreground="#FFF7F5F5" VerticalAlignment="Center"
+           FontSize="30" TextAlignment="Center" FontFamily="Yu Gothic" HorizontalAlignment="Center" Foreground="#FFF7F5F5" VerticalAlignment="Center"                                          
             />
         <TextBlock x:ConnectionId='4'
             x:Name="TextBlockDescription"
             Grid.Column="0" Grid.ColumnSpan="3" Foreground="#FFF7F5F5" TextAlignment="Left" FontFamily="Yu Gothic"  VerticalAlignment="Center" TextWrapping="WrapWholeWords"
             Grid.Row="3"
-            Text=""  FontSize="18px"     
+            Text=""  FontSize="18px"                                                      
            
             />
         <ListBox x:ConnectionId='5' 
             x:Name="JobsListBox"
             Grid.Column="0" Grid.ColumnSpan="3" Foreground="#FFF7F5F5"
-            Grid.Row="4" Opacity="0.8" Background="#FF9C9696"                                                
+            Grid.Row="4" Opacity="0.8" Background="#FF9C9696"                                                                                        
             />
         <Rectangle  Height="100"  Grid.Column="0" Grid.ColumnSpan="3"
             Grid.Row="1" HorizontalAlignment="Center" Stroke="Black" VerticalAlignment="Top" Width="400" Fill="#FF9C9696" Opacity="0.5" Canvas.ZIndex="-1"/>
-
+        <MediaElement x:ConnectionId='6' x:Name="media" />
 
     </Grid>
 </Page>

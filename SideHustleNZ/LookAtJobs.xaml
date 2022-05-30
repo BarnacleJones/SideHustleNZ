@@ -43,19 +43,19 @@
             Grid.Column="0" Grid.ColumnSpan="3" TextWrapping="WrapWholeWords"
             Grid.Row="1"
             Text=""     
-           FontSize="36" TextAlignment="Center" FontFamily="Yu Gothic" HorizontalAlignment="Center" Foreground="#FFF7F5F5" VerticalAlignment="Center"
+           FontSize="36" TextAlignment="Center" FontFamily="Yu Gothic" HorizontalAlignment="Center" Foreground="#FFF7F5F5" VerticalAlignment="Center" DoubleTapped="TextBlockName_DoubleTapped"
             />
         <TextBlock
             x:Name="TextBlockDescription"
             Grid.Column="0" Grid.ColumnSpan="3" Foreground="#FFF7F5F5" TextAlignment="Center" FontFamily="Yu Gothic" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="WrapWholeWords"
             Grid.Row="2"
-            Text=""  FontSize="20"     
+            Text=""  FontSize="20" DoubleTapped="TextBlockDescription_DoubleTapped"     
            
             />
         <ListBox 
             x:Name="JobsListBox"
             Grid.Column="0" Grid.ColumnSpan="3" Foreground="#FFF7F5F5"
-            Grid.Row="3" Opacity="0.8" Background="#FF9C9696" SelectionChanged="JobsListBox_SelectionChanged"
+            Grid.Row="3" Opacity="0.8" Background="#FF9C9696" SelectionChanged="JobsListBox_SelectionChanged" DoubleTapped="JobsListBox_DoubleTapped" 
             />
         <Button x:Name="GoToApplyJob" Content="Apply to Job" 
                 Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center"
@@ -63,8 +63,8 @@
         <Button x:Name="GoToAcceptJob" Content="Accept Job" 
                 Background="#FFFFFF"
                 Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" Tapped="GoToAcceptJob_Tapped" FontFamily="Yu Gothic" FontSize="15" Foreground="#FF2E4739" Height="80" Width="123" Opacity="0.8"/>
+        <MediaElement x:Name="media" />
 
-        
 
     </Grid>
 </Page>

@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Media.SpeechSynthesis;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,7 +24,35 @@ namespace SideHustleNZ
     /// </summary>
     public sealed partial class GuestPage : Page
     {
-
+        //Talk function to read text of element that is double tapped
+        private async void Talk(string message)
+        {            
+            try
+            {
+                // Configure the audio output.
+                var reader = new SpeechSynthesizer();
+                // Get the text
+                var stream = await reader.SynthesizeTextToStreamAsync(message);
+                // Setup the stream for the player
+                media.SetSource(stream, stream.ContentType);
+                // Play the message
+                media.Play();
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                // Voice Package not installed
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Media player components unavailable.\nYou need to Install a Voice Package in your Windows Settings.\n\nSettings > Time & Language > Speech > Manage Voices > Add Voices");
+                await messageDialog.ShowAsync();
+            }
+            catch (Exception)
+            {
+                // If the text is unable to be synthesized, throw an error message to the user.
+                media.AutoPlay = false;
+                var messageDialog = new Windows.UI.Popups.MessageDialog("Unable to synthesize text");
+                await messageDialog.ShowAsync();
+            }
+        }
+        //Jobs Dictionary
         Dictionary<string, Jobs> JobsDictionary = new Dictionary<string, Jobs>()
         {
             {"Gardening", new Jobs() { Name="Gardening - One Off", Description="One off gardening work. Involves weeding, laying paving stones and enjoying the sun."}},
@@ -36,7 +65,8 @@ namespace SideHustleNZ
         public GuestPage()
         {
             this.InitializeComponent();
-            JobsListBox.ItemsSource = JobsDictionary.Keys;
+            //Populate ListBox with JobsDictionary items
+            JobsListBox.ItemsSource = JobsDictionary.Keys; 
 
             // setup the device sizing for the application
             ApplicationView.GetForCurrentView().TryResizeView(new Size(App.DeviceScreenWidth, App.DeviceScreenHeight));
@@ -73,6 +103,21 @@ namespace SideHustleNZ
                 TextBlockDescription.Text = theJob.Description.ToString();
 
             }
+        }
+
+        private void TextBlockDescription_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            Talk(TextBlockDescription.Text);
+        }
+
+        private void TextBlockName_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            Talk(TextBlockName.Text);
+        }
+
+        private void JobsListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            Talk(JobsListBox.SelectedItem.ToString());
         }
     }
 }
